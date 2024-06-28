@@ -4,3 +4,71 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+
+/* REGOLE CONTAINER */
+.container{
+    height: 100vh;
+    width: 70%;
+    margin: 0 auto;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    display: flex;
+}
+
+/* REGOLE COL */
+.col-3{
+    width: 30%;
+    /* DEBUG */
+    height: 100%;
+    background-color: blueviolet;
+    border: 1px solid #000;
+}
+
+.col-7{
+    width: 70%;
+    /* DEBUG */
+    height: 100%;
+    background-color: blueviolet;
+}
+
+/* REGOLE COLONNA SINISTRA */
+.info{
+    height: 50px;
+    /* DEBUG */
+    background-color: lightgray;
+}
+
+.notifications{
+    height: 60px;
+    /* DEBUG */
+    background-color: lightgreen;
+}
+
+.search-chat{
+    height: 70px;
+    /* DEBUG */
+    background-color: lightcoral;
+}
+
+.list-chat{
+    height: calc(100% - 180px);
+    overflow: auto;
+    /* DEBUG */
+    background-color: lightgoldenrodyellow;
+}
+
+/* REGOLE COLONNA DESTRA */
+
+.chat-display{
+    height: calc(100% - 100px);
+    overflow: auto;
+    /* DEBUG */
+    background-color: blue;
+}
+
+.new-message{
+    height: 50px;
+    /* DEBUG */
+    background-color: aqua;
+}
