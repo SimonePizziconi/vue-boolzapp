@@ -46,86 +46,14 @@
                 </div>
             </div>
             <div class="list-chat">
-                <div class="label-chat">
+                <div class="label-chat" v-for="(label, index) in contacts" :key="index">
                     <div class="label-user">
                         <div class="circle icon-avatar">
-                            <img src="img/boy.png" alt="">
+                            <img :src="label.avatar" alt=icona-avatar>
                         </div>
                         <div class="label-text">
-                            <h3>Michele</h3>
-                            <span>Ultimo messaggio inviato</span>
-                        </div>
-                    </div>
-                    <span class="time">12:00</span>
-                </div>
-                <div class="label-chat">
-                    <div class="label-user">
-                        <div class="circle icon-avatar">
-                            <img src="img/gamer-1.png" alt="">
-                        </div>
-                        <div class="label-text">
-                            <h3>Michele</h3>
-                            <span>Ultimo messaggio inviato</span>
-                        </div>
-                    </div>
-                    <span class="time">12:00</span>
-                </div>
-                <div class="label-chat">
-                    <div class="label-user">
-                        <div class="circle icon-avatar">
-                            <img src="img/girl.png" alt="">
-                        </div>
-                        <div class="label-text">
-                            <h3>Michele</h3>
-                            <span>Ultimo messaggio inviato</span>
-                        </div>
-                    </div>
-                    <span class="time">12:00</span>
-                </div>
-                <div class="label-chat">
-                    <div class="label-user">
-                        <div class="circle icon-avatar">
-                            <img src="img/man-1.png" alt="">
-                        </div>
-                        <div class="label-text">
-                            <h3>Michele</h3>
-                            <span>Ultimo messaggio inviato</span>
-                        </div>
-                    </div>
-                    <span class="time">12:00</span>
-                </div>
-                <div class="label-chat">
-                    <div class="label-user">
-                        <div class="circle icon-avatar">
-                            <img src="img/man-2.png" alt="">
-                        </div>
-                        <div class="label-text">
-                            <h3>Michele</h3>
-                            <span>Ultimo messaggio inviato</span>
-                        </div>
-                    </div>
-                    <span class="time">12:00</span>
-                </div>
-                <div class="label-chat">
-                    <div class="label-user">
-                        <div class="circle icon-avatar">
-                            <img src="img/woman-2.png">
-                        </div>
-                        <div class="label-text">
-                            <h3>Michele</h3>
-                            <span>Ultimo messaggio inviato</span>
-                        </div>
-                    </div>
-                    <span class="time">12:00</span>
-                </div>
-                <div class="label-chat">
-                    <div class="label-user">
-                        <div class="circle icon-avatar">
-                            <img src="img/woman.png" alt="">
-                        </div>
-                        <div class="label-text">
-                            <h3>Michele</h3>
-                            <span>Ultimo messaggio inviato</span>
+                            <h3>{{label.name}}</h3>
+                            <span>{{}}</span>
                         </div>
                     </div>
                     <span class="time">12:00</span>
