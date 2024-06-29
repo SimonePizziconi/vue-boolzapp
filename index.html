@@ -46,8 +46,8 @@
                 </div>
             </div>
             <div class="list-chat">
-                <div class="label-chat" v-for="(label, index) in contacts" :key="index">
-                    <div class="label-user">
+                <div class="label-chat" v-for="(label, index) in contacts" :key="index" @click="activeClass(index)" :class="{active: label.visible}">
+                    <div class="label-user" >
                         <div class="circle icon-avatar">
                             <img :src="label.avatar" alt=icona-avatar>
                         </div>
@@ -78,7 +78,10 @@
                 </div>
             </div>
             <div class="chat-display">
-                <div class="label-message white">Ciao</div>
+                <div v-for="(message, index) in contacts" :key="index" class="label-message white">
+                    <h3>{{message.messages.message}}</h3>
+                    <span></span>
+                </div>
                 <div class="label-message white">Come Stai?</div>
                 <div class="label-message green">Tutto bene tu?</div>
             </div>

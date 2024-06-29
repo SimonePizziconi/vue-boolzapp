@@ -141,12 +141,21 @@ a{
     align-items: center;
     height: 70px;
     position: relative;
+    cursor: pointer;
+}
+
+.label-chat:hover{
+    background-color: #e9ebeb;
 }
 
 .time{
     position: absolute;
     right: 10px;
     top: 20px;
+}
+
+.active{
+    background-color: #d6d6d6;
 }
 
 /************ REGOLE COLONNA DESTRA ************/

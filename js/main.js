@@ -7,7 +7,7 @@ const { createApp } = Vue;
             {
                 name: 'Michele',
                 avatar: 'img/boy.png',
-                visible: true,
+                visible: false,
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
@@ -29,7 +29,7 @@ const { createApp } = Vue;
             {
                 name: 'Fabio',
                 avatar: 'img/gamer-1.png',
-                visible: true,
+                visible: false,
                 messages: [
                     {
                         date: '20/03/2020 16:30:00',
@@ -51,7 +51,7 @@ const { createApp } = Vue;
             {
                 name: 'Francesca',
                 avatar: 'img/girl.png',
-                visible: true,
+                visible: false,
                 messages: [
                     {
                         date: '28/03/2020 10:10:40',
@@ -73,7 +73,7 @@ const { createApp } = Vue;
             {
                 name: 'Alessandro B.',
                 avatar: 'img/man-1.png',
-                visible: true,
+                visible: false,
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
@@ -90,7 +90,7 @@ const { createApp } = Vue;
             {
                 name: 'Alessandro L.',
                 avatar: 'img/man-2.png',
-                visible: true,
+                visible: false,
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
@@ -107,7 +107,7 @@ const { createApp } = Vue;
             {
                 name: 'Claudia',
                 avatar: 'img/woman-2.png',
-                visible: true,
+                visible: false,
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
@@ -129,7 +129,7 @@ const { createApp } = Vue;
             {
                 name: 'Federica',
                 avatar: 'img/woman.png',
-                visible: true,
+                visible: false,
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
@@ -143,7 +143,14 @@ const { createApp } = Vue;
                     }
                 ],
             },
-        ]        
+        ]      
       }
-    }
+    },
+    methods: {
+        activeClass(index){
+            this.contacts.forEach((chat, i) => {
+                chat.visible = i === index;
+            });
+        }
+      }
   }).mount('#app');
