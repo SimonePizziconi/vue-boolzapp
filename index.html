@@ -14,7 +14,10 @@
 <body>
 
     <div class="container" id="app">
+        <!-- Colonna di Sinistra -->
         <div class="col-3">
+
+            <!-- Info Utili dell'utente -->
             <div class="info info-user">
                 <div class="label-user">
                     <div class="circle icon-avatar">
@@ -30,6 +33,8 @@
                     <a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a>
                 </div>
             </div>
+
+            <!-- Contenitore per disattivare notifiche -->
             <div class="notifications">
                 <div class="circle icon-avatar">
                     <i class="fa-solid fa-volume-xmark"></i>
@@ -39,12 +44,16 @@
                     <a href="#">Attiva notifiche desktop</a>
                 </div>
             </div>
+
+            <!-- Ricerca Contatti -->
             <div class="search-chat">
                 <div class="search-bar">
                     <label for=""><i class="fa-solid fa-magnifying-glass"></i></label>
                     <input type="text" placeholder="Cerca o inizia una nuova chat">
                 </div>
             </div>
+
+            <!-- Lista delle chat -->
             <div class="list-chat">
                 <div class="label-chat" v-for="(label, index) in contacts" :key="index" @click="activeClass(index)" :class="{active: label.visible}">
                     <div class="label-user" >
@@ -60,7 +69,11 @@
                 </div>
             </div>
         </div>
+
+        <!-- Colonna di destra -->
         <div class="col-7">
+
+            <!-- Info della chat aperta -->
             <div class="info info-chat">
                 <div class="label-user" v-if="activeChat">
                     <div class="circle icon-avatar">
@@ -77,15 +90,19 @@
                     <a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a>
                 </div>
             </div>
+
+            <!-- Display della chat -->
             <div class="chat-display">
                 <div v-for="(message, index) in activeChat.messages" :key="index" class="label-message" :class="message.status" v-if="activeChat">
                     <h3>{{message.message}}</h3>
                     <span></span>
                 </div>
             </div>
+
+            <!-- Invio nuovo messaggio -->
             <div class="new-message">
                 <a href="#"><i class="fa-regular fa-face-smile"></i></a>
-                <input type="text" placeholder="Scrivi un nuovo messaggio">
+                <input v-model="newMessage" @keyup.enter="sendNewMessage()" type="text" placeholder="Scrivi un nuovo messaggio">
                 <a href="#"><i class="fa-solid fa-microphone"></i></a>
             </div>
         </div>

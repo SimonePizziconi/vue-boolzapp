@@ -143,7 +143,8 @@ const { createApp } = Vue;
                     }
                 ],
             },
-        ],      
+        ],
+        newMessage: ``,  
       }
     },
     methods: {
@@ -154,7 +155,22 @@ const { createApp } = Vue;
             });
         },
 
-        
+        // Invia un nuovo messaggio
+        sendNewMessage(){
+            if(this.newMessage.trim() !== '' && this.activeChat){
+                this.activeChat.messages.push({
+                    message: this.newMessage,
+                    status: 'sent'
+                  });
+                  setTimeout(() => {
+                    this.activeChat.messages.push({
+                      message: 'ok',
+                      status: 'received'
+                    });
+                  }, 1000);
+                  this.newMessage = '';
+            }
+        }
     },
     computed:{
         // Mostra i messaggi in base alla chat attiva
