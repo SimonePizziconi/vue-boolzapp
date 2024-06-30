@@ -143,7 +143,7 @@ const { createApp } = Vue;
                     }
                 ],
             },
-        ]      
+        ],      
       }
     },
     methods: {
