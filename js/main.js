@@ -147,10 +147,19 @@ const { createApp } = Vue;
       }
     },
     methods: {
+        // Aggiungi classe alla chat attiva
         activeClass(index){
             this.contacts.forEach((chat, i) => {
                 chat.visible = i === index;
             });
+        },
+
+        
+    },
+    computed:{
+        // Mostra i messaggi in base alla chat attiva
+        activeChat(){
+            return this.contacts.find(chat => chat.visible);
         }
-      }
+    }
   }).mount('#app');

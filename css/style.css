@@ -184,13 +184,13 @@ a{
     margin-bottom: 20px;
 }
 
-.white{
+.received{
     background-color: #ffffff;
     margin-left: 20px;
     align-self: flex-start;
 }
 
-.green{
+.sent{
     background-color: #d5f9ba;
     margin-right: 20px;
     align-self: flex-end;

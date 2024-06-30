@@ -78,12 +78,10 @@
                 </div>
             </div>
             <div class="chat-display">
-                <div v-for="(message, index) in contacts" :key="index" class="label-message white">
-                    <h3>{{message.messages.message}}</h3>
+                <div v-for="(message, index) in activeChat.messages" :key="index" class="label-message" :class="message.status" v-if="activeChat">
+                    <h3>{{message.message}}</h3>
                     <span></span>
                 </div>
-                <div class="label-message white">Come Stai?</div>
-                <div class="label-message green">Tutto bene tu?</div>
             </div>
             <div class="new-message">
                 <a href="#"><i class="fa-regular fa-face-smile"></i></a>
