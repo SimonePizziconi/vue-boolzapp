@@ -49,14 +49,14 @@
             <div class="search-chat">
                 <div class="search-bar">
                     <label for=""><i class="fa-solid fa-magnifying-glass"></i></label>
-                    <input type="text" placeholder="Cerca o inizia una nuova chat">
+                    <input v-model="searchName" type="text" placeholder="Cerca o inizia una nuova chat">
                 </div>
             </div>
 
             <!-- Lista delle chat -->
             <div class="list-chat">
-                <div class="label-chat" v-for="(label, index) in contacts" :key="index" @click="activeClass(index)" :class="{active: label.visible}">
-                    <div class="label-user" >
+                <div class="label-chat" v-for="(label, index) in filteredContacts" :key="index" @click="activeClass(index)" :class="{active: label.visible}">
+                    <div class="label-user">
                         <div class="circle icon-avatar">
                             <img :src="label.avatar" alt=icona-avatar>
                         </div>

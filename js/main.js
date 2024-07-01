@@ -144,7 +144,8 @@ const { createApp } = Vue;
                 ],
             },
         ],
-        newMessage: ``,  
+        newMessage: ``, 
+        searchName: ``,
       }
     },
     methods: {
@@ -170,12 +171,23 @@ const { createApp } = Vue;
                   }, 1000);
                   this.newMessage = '';
             }
-        }
+        },
+
+
+        
     },
     computed:{
         // Mostra i messaggi in base alla chat attiva
         activeChat(){
             return this.contacts.find(chat => chat.visible);
-        }
+        },
+        filteredContacts() {
+            if (!this.searchName.trim()) {
+                return this.contacts;
+            }
+            return this.contacts.filter(contact =>
+                contact.name.toLowerCase().includes(this.searchName.trim().toLowerCase())
+            );
+        },
     }
   }).mount('#app');
