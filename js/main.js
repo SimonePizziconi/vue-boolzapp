@@ -151,7 +151,7 @@ const { createApp } = Vue;
     methods: {
         // Aggiungi classe alla chat attiva
         activeClass(index){
-            this.contacts.forEach((chat, i) => {
+            this.filteredContacts.forEach((chat, i) => {
                 chat.visible = i === index;
             });
         },
@@ -181,6 +181,7 @@ const { createApp } = Vue;
         activeChat(){
             return this.contacts.find(chat => chat.visible);
         },
+        
         filteredContacts() {
             if (!this.searchName.trim()) {
                 return this.contacts;
