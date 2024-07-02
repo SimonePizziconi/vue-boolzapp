@@ -193,8 +193,10 @@ a{
     margin-bottom: 20px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: 10px;
     border-radius: 20px;
+    position: relative;
 }
 
 .received{
@@ -209,8 +211,17 @@ a{
     align-self: flex-end;
 }
 
+.angle-dropdown{
+    cursor: pointer;
+    display: none;
+}
 
-/*  */
+.label-message:hover .angle-dropdown{
+    display: inline-block;
+}
+
+
+/* Regole css nuovo messaggio */
 .new-message{
     display: flex;
     align-items: center;
@@ -229,4 +240,20 @@ a{
 .new-message i{
     margin: 0 20px;
     color: #6a7176;
+}
+
+/* Regole dropdown */
+.dropdown{
+    position: absolute;
+    right: 0;
+    top: 35px;
+    z-index: 900;
+    border-radius: 20px;
+    background-color: #ffffff;
+    padding: 10px;
+}
+
+.dropdown i{
+    cursor: pointer;
+    color: #adaaab;
 }

@@ -146,6 +146,7 @@ const { createApp } = Vue;
         ],
         newMessage: ``, 
         searchName: ``,
+        activeDropdownIndex: null,
       }
     },
     methods: {
@@ -172,6 +173,19 @@ const { createApp } = Vue;
                   this.newMessage = '';
             }
         },
+
+        // Elimina messaggio
+        toggleDropdown(index) {
+            this.activeDropdownIndex = this.activeDropdownIndex === index ? null : index;
+        },
+        deleteMessage(index) {
+
+            // Rimuovi il messaggio dall'array activeChat.messages
+            this.activeChat.messages.splice(index, 1);
+
+            // Chiudi il menu a tendina dopo l'eliminazione
+            this.activeDropdownIndex = null;
+        }
 
 
         

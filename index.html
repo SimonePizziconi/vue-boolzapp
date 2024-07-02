@@ -95,7 +95,10 @@
             <div class="chat-display">
                 <div  v-for="(message, index) in activeChat.messages" :key="index" class="label-message" :class="message.status" v-if="activeChat">
                     <span>{{message.message}}</span>
-                    <span></span>
+                    <i class="fa-solid fa-angle-down angle-dropdown" @click="toggleDropdown(index)"></i>
+                    <div class="dropdown" v-if="activeDropdownIndex === index">
+                        <i @click="deleteMessage(index)" class="fa-solid fa-trash"></i>
+                    </div>
                 </div>
             </div>
 
