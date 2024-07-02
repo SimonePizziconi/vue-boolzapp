@@ -55,17 +55,17 @@
 
             <!-- Lista delle chat -->
             <div class="list-chat">
-                <div class="label-chat" v-for="(label, index) in filteredContacts" :key="index" @click="activeClass(index)" :class="{active: label.visible}">
+                <div class="label-chat" v-for="(contact, index) in filteredContacts" :key="index" @click="activeClass(index)" :class="{active: contact.visible}">
                     <div class="label-user">
                         <div class="circle icon-avatar">
-                            <img :src="label.avatar" alt=icona-avatar>
+                            <img :src="contact.avatar" alt=icona-avatar>
                         </div>
                         <div class="label-text">
-                            <h6 class="chat-name">{{label.name}}</h6>
-                            <span></span>
+                            <h6 class="chat-name">{{contact.name}}</h6>
+                            <span class="last-message">{{ getLastMessage(contact) }}</span>
+                            <span class="time">{{getLastMessageTime(contact)}}</span>
                         </div>
-                    </div>
-                    <span class="time">12:00</span>
+                    </div>   
                 </div>
             </div>
         </div>
@@ -81,7 +81,7 @@
                     </div>
                     <div class="label-text">
                         <h6 class="chat-name">{{activeChat.name}}</h6>
-                        <span>Ultimo messaggio inviato</span>
+                        <span>Ultimo Accesso oggi alle {{getLastMessageTime(activeChat)}}</span>
                     </div>
                 </div>
                 <div class="icon" v-if="activeChat">

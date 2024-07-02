@@ -174,21 +174,33 @@ const { createApp } = Vue;
             }
         },
 
-        // Elimina messaggio
+        // Per mostare il dropdown
         toggleDropdown(index) {
             this.activeDropdownIndex = this.activeDropdownIndex === index ? null : index;
         },
-        deleteMessage(index) {
 
+        // Elimina messaggio
+        deleteMessage(index) {
             // Rimuovi il messaggio dall'array activeChat.messages
             this.activeChat.messages.splice(index, 1);
 
             // Chiudi il menu a tendina dopo l'eliminazione
             this.activeDropdownIndex = null;
+        },
+
+        // Mostra date e ultimo messaggio inviato
+        getLastMessage(contact) {
+            // Restituisce l'ultimo messaggio del contatto
+            const lastMessage = contact.messages[contact.messages.length - 1];
+            return lastMessage ? lastMessage.message : '';
+        },
+
+        getLastMessageTime(contact) {
+            // Restituisce l'ora dell'ultimo messaggio del contatto
+            const lastMessage = contact.messages[contact.messages.length - 1];
+            return lastMessage ? lastMessage.date.split(' ')[1] : '';
         }
 
-
-        
     },
     computed:{
         // Mostra i messaggi in base alla chat attiva

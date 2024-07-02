@@ -149,9 +149,14 @@ a{
 .label-chat{
     display: flex;
     align-items: center;
+    justify-content: space-between;
     height: 70px;
     position: relative;
     cursor: pointer;
+}
+
+.last-message{
+    font-size: 12px;
 }
 
 .label-chat:hover{
@@ -162,6 +167,7 @@ a{
     position: absolute;
     right: 10px;
     top: 20px;
+    font-size: 12px;
 }
 
 .active{
