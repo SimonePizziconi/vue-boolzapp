@@ -24,7 +24,7 @@
                         <img src="img/gamer.png" alt="">
                     </div>
                     <div class="label-text">
-                        <h3>Simone</h3>
+                        <h6 class="chat-name">Simone</h6>
                     </div>
                 </div>
                 <div class="icon">
@@ -61,7 +61,7 @@
                             <img :src="label.avatar" alt=icona-avatar>
                         </div>
                         <div class="label-text">
-                            <h3>{{label.name}}</h3>
+                            <h6 class="chat-name">{{label.name}}</h6>
                             <span></span>
                         </div>
                     </div>
@@ -80,7 +80,7 @@
                         <img :src="activeChat.avatar" alt="">
                     </div>
                     <div class="label-text">
-                        <h3>{{activeChat.name}}</h3>
+                        <h6 class="chat-name">{{activeChat.name}}</h6>
                         <span>Ultimo messaggio inviato</span>
                     </div>
                 </div>
@@ -93,8 +93,8 @@
 
             <!-- Display della chat -->
             <div class="chat-display">
-                <div v-for="(message, index) in activeChat.messages" :key="index" class="label-message" :class="message.status" v-if="activeChat">
-                    <h3>{{message.message}}</h3>
+                <div  v-for="(message, index) in activeChat.messages" :key="index" class="label-message" :class="message.status" v-if="activeChat">
+                    <span>{{message.message}}</span>
                     <span></span>
                 </div>
             </div>

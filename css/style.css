@@ -25,6 +25,10 @@ a{
     margin-right: 10px;
 }
 
+.icon i{
+    margin-right: 10px;
+}
+
 
 /* REGOLE CONTAINER */
 .container{
@@ -77,6 +81,12 @@ a{
 
 .icon-avatar img{
     width: 100%;
+}
+
+.chat-name{
+    font-weight: lighter;
+    font-size: 15px;
+    color: #242648;
 }
 
 
@@ -180,8 +190,11 @@ a{
 
 .label-message{
     width: 200px;
-    height: 50px;
     margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 20px;
 }
 
 .received{
